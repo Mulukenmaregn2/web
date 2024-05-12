@@ -1,0 +1,128 @@
+<html>
+    <title>School Averege Mark Status</title>
+    <head>
+        <style>
+            table{
+                min-width: 100%;
+                border: 1px solid rgb(40, 161, 40);
+                margin: 5px;
+            }
+            td{
+                height: 30px;
+                text-align: center;
+            }
+            th{
+                background-color: rgb(43, 167, 43);
+                color:white;
+                border: 1px solid white;
+                height: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="title">School Status</h1>
+        
+        <table id="table3" rules="all">
+            <tr id="1tex3"></tr>
+            <tr id="2tex3"></tr>
+            <tr id="5tex3"></tr>
+        </table>
+        <table id="table2" rules="all">
+            <tr id="1tex2"></tr>
+            <tr id="2tex2"></tr>
+            <tr id="5tex2"></tr>
+        </table>
+        <table id="table1" rules="all">
+            <tr id="1tex"></tr>
+            <tr id="2tex"></tr>
+            <tr id="5tex"></tr>
+        </table>
+      
+        <script>
+             // table 1
+            var t3 = document.getElementById("table3");
+            var t2 = document.getElementById("table2");
+            var t1 = document.getElementById("table1");
+            var title = document.getElementById("title");
+            //table creation
+            document.getElementById("1tex3").innerHTML ='<th colspan="56">Hulbarag District</th>';
+            document.getElementById("2tex3").innerHTML ='<th>የክፍል ደረጃ</th><th colspan="5">1ኛክፍል</th><th colspan="5">2ኛክፍል</th><th colspan="5">3ኛክፍል</th><th colspan="5">4ኛክፍል</th><th colspan="5">5ኛክፍልድምር</th><th colspan="5">6ኛክፍልድምር</th><th colspan="5">1-6ኛክፍልድምር</th><th colspan="5">7ኛክፍል</th><th colspan="5">8ኛክፍል</th><th colspan="5">7-8ኛክፍል</th><th colspan="5">1-8ኛክፍል</th>';
+            var tex5 ="<td>የ2012 አፈጻጸም</td><td>ለ2013 ለ1ኛሴ/ር የተጣለግብ</td><td>የ2013 የ1ኛሴ/ር አፈጻጸም</td><td>ልዩነት/±</td><td>የ2013 ለ2ኛሴ/ር የተጣለግብ</td>";
+            document.getElementById("5tex3").innerHTML = '<td>የትምህርት ዓይነት</td>'+ tex5 + tex5 + tex5 +tex5+tex5+tex5+ tex5 + tex5 +tex5+tex5+tex5;
+            var rtext = '';
+            var rlimit = 13;
+            for(let i=0; i<rlimit;i++){ //rows
+                var ctext = '';
+                if (i==0){var ctext = "<td>አማሪኛ</td>";}if (i==1){var ctext = "<td>እንግሊዝኛ</td>";}if (i==2){var ctext = "<td>ያከባቢ ቋንቋ</td>";}if (i==3){var ctext = "<td>ስፖርት</td>";}if (i==4){var ctext = "<td>ስነ-ጥበብ /ቴ.ድረዊንግ/</td>";}
+                if (i==5){var ctext = "<td>ግብረ-ገብ  /ስነ-ዜጋ/td>";}if (i==6){var ctext = "<td>ICT</td>";}if (i==7){var ctext = "<td>ሂሳብ</td>";}if (i==8){var ctext = "<td>ያ/ሳይንስ</td>";}if (i==9){var ctext = "<td>ጀነራል ሳይንስ</td>";}
+                if (i==10){var ctext = "<td>ሶሻል ሳይንስ</td>";}if (i==11){var ctext = "<td>ስራና ክህሎትሪ</td>";}if (i==12){var ctext = "<td>አማካይ</td>";
+            }
+            for(let j=0; j<55;j++){ //cols
+                if((j%5===0|(j-2)%5===0)&&!(j==30|j==32)&&j<45&&!(i==(rlimit-1))){
+                    var ctext = ctext + '<td contenteditable="true"></td>';
+                }else{
+                    var ctext = ctext + "<td></td>";
+                }
+            }
+            rtext =rtext+ "<tr>"+ctext +"</tr>";
+            }
+            t3.innerHTML += rtext;
+            
+                // table 2
+   
+               var title = document.getElementById("title");
+               //table creation
+               document.getElementById("1tex2").innerHTML ='<th colspan="31">Hulbarag District</th>';
+               document.getElementById("2tex2").innerHTML ='<th>የክፍል ደረጃ</th><th colspan="5">9ኛክፍል</th><th colspan="5">10ኛክፍል</th><th colspan="5">11ኛክፍል</th><th colspan="5">12ኛክፍል</th><th colspan="5">9-12ኛ ክፍል ድምር</th><th colspan="5">1-12ኛ ክፍል ድምር</th>';
+               var tex5 ="<td>የ2012 አፈጻጸም</td><td>ለ2013 ለ1ኛሴ/ር የተጣለግብ</td><td>የ2013 የ1ኛሴ/ር አፈጻጸም</td><td>ልዩነት/±</td><td>የ2013 ለ2ኛሴ/ር የተጣለግብ</td>";
+               document.getElementById("5tex2").innerHTML = '<td>የትምህርት ዓይነት</td>'+ tex5 + tex5 + tex5 +tex5+tex5+tex5;
+               var rtext = '';
+               var rlimit = 20;
+               for(let i=0; i<rlimit;i++){ //rows
+                   var ctext = '';
+                   if (i==0){var ctext = "<td>አማሪኛ</td>";}if (i==1){var ctext = "<td>እንግሊዝኛ</td>";}if (i==2){var ctext = "<td>ያከባቢ ቋንቋ</td>";}if (i==3){var ctext = "<td>ስፖርት</td>";}if (i==4){var ctext = "<td>ቴ.ድረዊንግ/</td>";}
+                   if (i==5){var ctext = "<td>ስነ-ዜጋ እና ስነ ምግባር/</td>";}if (i==6){var ctext = "<td>ICT</td>";}if (i==7){var ctext = "<td>ሂሳብ</td>";}if (i==8){var ctext = "<td>ጂኦግራፊ</td>";}if (i==9){var ctext = "<td>ታሪክ</td>";}
+                   if (i==10){var ctext = "<td>ኢኮኖሚክስ</td>";}if (i==11){var ctext = "<td>ቢዚነስ</td>";}if (i==12){var ctext = "<td>ባዮሎጂ</td>";}if (i==13){var ctext = "<td>ፊዚክስ</td>";}if (i==14){var ctext = "<td>ኬሚስትሪ</td>";}
+                   if (i==15){var ctext = "<td>ያ/ሳይንስ</td>";}if (i==16){var ctext = "<td>ጀነራል ሳይንስ</td>";}if (i==17){var ctext = "<td>ሶሻል ሳይንስ</td>";}if (i==18){var ctext = "<td>ስራና ክህሎትሪ</td>";}if (i==19){var ctext = "<td>አማካይ</td>";
+               }
+               for(let j=0; j<30;j++){ //cols
+                   if((j%5===0|(j-2)%5===0)&&j<10&&!(i==(rlimit-1))){
+                       var ctext = ctext + '<td contenteditable="true"></td>';
+                   }else{
+                       var ctext = ctext + "<td></td>";
+                   }
+               }
+               rtext =rtext+ "<tr>"+ctext +"</tr>";
+               }
+               t2.innerHTML += rtext;
+                
+            
+                             // table 3
+
+            
+                var title = document.getElementById("title");
+                //table creation
+                document.getElementById("1tex").innerHTML ='<th colspan="36">Hulbarag District</th>';
+                document.getElementById("2tex").innerHTML ='<th>የክፍል ደረጃ</th><th colspan="5">11ኛክፍል ማህበራዊ ሳይንስ</th><th colspan="5">11ኛክፍል ተፈጥሮ ሳይንስ</th><th colspan="5">12ኛክፍል ማህበራዊ ሳይንስ</th><th colspan="5">12ኛክፍል ተፈጥሮ ሳይንስ</th><th colspan="5">11-12ኛክፍል ማህበራዊ ሳይንስ</th><th colspan="5">11-12ኛክፍል ተፈጥሮ ሳይንስ</th><th colspan="5">11-12ኛክፍል(ማህበራዊ እና ተፈጥሮ ሳይንስ )ጥቅል</th>';
+                var tex5 ="<td>የ2012 አፈጻጸም</td><td>ለ2013 ለ1ኛሴ/ር የተጣለግብ</td><td>የ2013 የ1ኛሴ/ር አፈጻጸም</td><td>ልዩነት/±</td><td>የ2013 ለ2ኛሴ/ር የተጣለግብ</td>";
+                document.getElementById("5tex").innerHTML = '<td>የትምህርት ዓይነት</td>'+ tex5 + tex5 + tex5 +tex5+tex5+tex5+tex5;
+                var rtext = '';
+                var rlimit = 16;
+                for(let i=0; i<rlimit;i++){ //rows
+                    var ctext = '';
+                    if (i==0){var ctext = "<td>አማሪኛ</td>";}if (i==1){var ctext = "<td>እንግሊዝኛ</td>";}if (i==2){var ctext = "<td>ያከባቢ ቋንቋ</td>";}if (i==3){var ctext = "<td>ስፖርት</td>";}if (i==4){var ctext = "<td>ቴ.ድረዊንግ/</td>";}
+                    if (i==5){var ctext = "<td>ስነ-ዜጋ እና ስነ ምግባር/</td>";}if (i==6){var ctext = "<td>ICT</td>";}if (i==7){var ctext = "<td>ሂሳብ</td>";}if (i==8){var ctext = "<td>ጂኦግራፊ</td>";}if (i==9){var ctext = "<td>ታሪክ</td>";}
+                    if (i==10){var ctext = "<td>ኢኮኖሚክስ</td>";}if (i==11){var ctext = "<td>ቢዚነስ</td>";}if (i==12){var ctext = "<td>ባዮሎጂ</td>";}if (i==13){var ctext = "<td>ፊዚክስ</td>";}if (i==14){var ctext = "<td>ኬሚስትሪ</td>";}
+                    if (i==15){var ctext = "<td>አማካይ</td>";}
+                    for(let j=0; j<35;j++){ //cols
+                        if((j%5===0|(j-2)%5===0)&&j<20&&!(i==(rlimit-1))){
+                             var ctext = ctext + '<td contenteditable="true"></td>';
+                        }else{ var ctext = ctext + "<td></td>"; }
+                    }
+                    rtext =rtext+ "<tr>"+ctext +"</tr>";
+                }
+                t1.innerHTML += rtext;
+            </script>
+           <script src="systems.js"></script>
+    </body>
+</html>
